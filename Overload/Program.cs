@@ -3,6 +3,8 @@
   //Estrutura base Para projetos antigos com dotnet (Foi necessário usarmos porconta da sobrecarga dos métodos, pois o modelo ivo nào permite)
   public static void Main(string[] args)
   {
+
+    var resultado6 = Calcula (1,1,5,5,5,5,5,5,5,5);
     //Utilizar o Tryparse para conversão 
     //Detalhada
     Console.WriteLine("Digite um numero");
@@ -38,6 +40,9 @@
     
     //Casting
     int resultado111 =  (int)Calcula(1, 2);
+
+
+
     
     Console.WriteLine(resultado1);
 
@@ -47,6 +52,19 @@
 
     int resultado3 = Calcula(1,5,6);
     Console.WriteLine(resultado3);
+
+    int num1 = 1;
+    int num2 = 5;
+    int num3 = 6;
+    int resultado4 = Calcula(num1, num2, num3);
+
+
+    int num4 = 1;
+    int num5 = 5;
+
+    var resultado5 = Calcula(num4, num5);
+
+    
 
   }
   //por conta do modelo antigo usando a classe static program os métodos criados nela precisam ser staticos também, 
@@ -62,6 +80,14 @@
   static int Calcula(int num1, int num2, int num3)
   {
     return num1 + num2 + num3;
+  }
+
+  static int Calcula(params int[] param){
+    int resultado = 0;
+    foreach(var num in param){
+      resultado += num;
+    }
+    return resultado;
   }
  
 }
